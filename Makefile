@@ -26,6 +26,10 @@ path:
 active:
 	poetry shell
 
+## Install dependecies
+install: active
+	$(PYTHON_INTERPRETER) poetry install
+
 ## Delete all compiled Python files
 clean:
 	find . -type f -name "*.py[co]" -delete
