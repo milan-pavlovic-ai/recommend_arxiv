@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "recommend_arxiv"
+version = "0.1.0"
+description = "ArXiv papers recommender based on link predictions"
+authors = ["PC-Milan <milan-pavlovic-ai@yandex.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+arxiv = "^1.4.2"
+numpy = "^1.23.3"
+pandas = "^1.5.0"
+scikit-learn = "^1.1.2"
+node2vec = "^0.4.6"
+seaborn = "^0.12.0"
+tqdm = "^4.64.1"
+networkx = "2.6.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
