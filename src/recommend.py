@@ -30,7 +30,7 @@ class Recommender:
         self.datamngr.data()
 
         # Network
-        self.net = self.datamngr.network(node='authors', links=['id'], compact=1)
+        self.net = self.datamngr.network(node='authors', links=['id'], compact=0)
 
         # Embeddings
         self.embds = self.datamngr.embeddings()
@@ -160,22 +160,37 @@ if __name__ == '__main__':
     
     # Recommend with Similarity
     results = recsys.recommend_with_similarity(
-        id='VALENTIN GUILLET',
+        id='DANIELA RUS',
         top_k=3
     )
-    
     print(f'\nResults with Cosine similarity:')
     for item in results:
         print(item)
     
-    
-    # Recommend with Model
-    recsys.train_model()
-    results = recsys.recommend_with_model(
-        id='VALENTIN GUILLET',
+    results = recsys.recommend_with_similarity(
+        id='PHILIPP NEUBAUER',
         top_k=3
     )
+    print(f'\nResults with Cosine similarity:')
+    for item in results:
+        print(item)
+
+
+    # Recommend with Model
+    recsys.train_model()
     
+    results = recsys.recommend_with_model(
+        id='DANIELA RUS',
+        top_k=3
+    )
+    print(f'\nResults with RF model:')
+    for item in results:
+        print(item)
+        
+    results = recsys.recommend_with_model(
+        id='PHILIPP NEUBAUER',
+        top_k=3
+    )
     print(f'\nResults with RF model:')
     for item in results:
         print(item)

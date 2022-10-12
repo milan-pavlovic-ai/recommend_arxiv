@@ -169,7 +169,7 @@ if __name__ == '__main__':
     datamngr.data()
 
     # Init network
-    datamngr.network(node='authors', links=['id'], compact=1)
+    datamngr.network(node='authors', links=['id'], compact=0)
 
     # Init Embeddings
     datamngr.embeddings()

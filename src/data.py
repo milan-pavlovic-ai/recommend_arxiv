@@ -195,8 +195,8 @@ class DataManager:
                 
             adj_dict[id] = all_link_nodes
         
-        # Create undirected graph
-        self.net = nx.Graph(adj_dict, create_using=nx.Graph)
+        # Create undirected multi-graph
+        self.net = nx.Graph(adj_dict, create_using=nx.MultiGraph)
         
         # Make compact
         print('\n\nNetwork:')
@@ -339,7 +339,7 @@ if __name__ == '__main__':
     net = datamngr.network(
         node='authors',
         links=['id'],
-        compact=1
+        compact=0
     )
 
     # Create embeddings
