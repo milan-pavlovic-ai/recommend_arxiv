@@ -161,7 +161,7 @@ if __name__ == '__main__':
     # Recommend with Similarity
     results = recsys.recommend_with_similarity(
         id='DANIELA RUS',
-        top_k=3
+        top_k=5
     )
     print(f'\nResults with Cosine similarity:')
     for item in results:
@@ -169,7 +169,7 @@ if __name__ == '__main__':
     
     results = recsys.recommend_with_similarity(
         id='PHILIPP NEUBAUER',
-        top_k=3
+        top_k=5
     )
     print(f'\nResults with Cosine similarity:')
     for item in results:
@@ -181,7 +181,7 @@ if __name__ == '__main__':
     
     results = recsys.recommend_with_model(
         id='DANIELA RUS',
-        top_k=3
+        top_k=5
     )
     print(f'\nResults with RF model:')
     for item in results:
@@ -189,7 +189,7 @@ if __name__ == '__main__':
         
     results = recsys.recommend_with_model(
         id='PHILIPP NEUBAUER',
-        top_k=3
+        top_k=5
     )
     print(f'\nResults with RF model:')
     for item in results:
