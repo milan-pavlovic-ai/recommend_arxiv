@@ -190,13 +190,13 @@ class DataManager:
             for link in links:
                 link_values = node_group[link].unique()
                 link_df = self.df_norm[(self.df_norm[node] != id) & (self.df_norm[link].isin(link_values))]
-                link_nodes = list(link_df[node].unique())
+                link_nodes = list(link_df[node])    # Multi edges, use unique() to avoid it
                 all_link_nodes += link_nodes
                 
             adj_dict[id] = all_link_nodes
         
         # Create undirected multi-graph
-        self.net = nx.Graph(adj_dict, create_using=nx.MultiGraph)
+        self.net = nx.MultiGraph(adj_dict)
         
         # Make compact
         print('\n\nNetwork:')
